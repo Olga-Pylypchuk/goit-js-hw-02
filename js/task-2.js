@@ -1,24 +1,19 @@
 'use strict';
 
-// const minutes = 0;
-// const hours = 12;
-// const time = minutes > 0 ? `${hours} h. ${minutes} m.` : `${hours} h.`;
-// console.log(time);
+function formatMessage(message, maxLength) {
+   if (message.length > maxLength) {
+// message.length = maxLength;
+ return `${message.length}${'...'} `;
+    } else { 
+        return message;
+    }
+}
 
-// const deadline = 7;
 
-// if(deadline === 1){
-// console.log('Today');
 
-// }
-// else if(deadline === 2){
-// console.log('Tomorrow');
-
-// }
-// else if(deadline === 3){
-//     console.log('Overmorrow');
-    
-// }
-// else {
-//     console.log('DAte in the future');
-//     }
+console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
+console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"
+console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."
+console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
+console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
+console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
